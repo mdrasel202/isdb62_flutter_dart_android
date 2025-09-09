@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basics/setting_page.dart';
+
+import 'first_page.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,9 +13,9 @@ class MyApp extends StatelessWidget {
 
   // final name = const["Rasel", "Hemu", "Jahid"];
 
-  void userTapped(){
-    print("user tapped");
-  }
+  // void userTapped(){
+  //   print("user tapped");
+  // }
 
   // This widget is the root of your application.
   @override
@@ -19,27 +23,34 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-     home: Scaffold(
-      backgroundColor: Colors.green[100],
-      appBar: AppBar(
-        title: Center(
-          child: Text("My App Bar",
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-        ),
-        // centerTitle: true,
-        backgroundColor: Colors.green,
-        elevation: 0,
-        leading: Icon(Icons.menu),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.logout),
-          ),
-        ],
-      ),
+     home: First_Page(),
+     routes: {
+        '/firstpage': (context) => First_Page(),
+       '/homepage' : (context) => Home_Page(),
+       '/settingpage' : (context) => Setting_Page(),
+     },
+     // home: Scaffold(
+     //  backgroundColor: Colors.green[100],
+
+      // appBar: AppBar(
+      //   title: Center(
+      //     child: Text("My App Bar",
+      //       style: TextStyle(
+      //         color: Colors.white,
+      //       ),
+      //     ),
+      //   ),
+      //   // centerTitle: true,
+      //   backgroundColor: Colors.green,
+      //   elevation: 0,
+      //   leading: Icon(Icons.menu),
+      //   actions: [
+      //     IconButton(
+      //         onPressed: () {},
+      //         icon: Icon(Icons.logout),
+      //     ),
+      //   ],
+      // ),
       // body: Center(
       //   child: Container(
       //     height: 300,
@@ -88,21 +99,21 @@ class MyApp extends StatelessWidget {
        //     ),
        // ),
 
-       body: Center(
-         child: GestureDetector(
-           onTap:userTapped,
-               // (){// print("user tapped");},
-           child: Container(
-             width: 300,
-             height: 250,
-             color: Colors.deepPurple,
-             child: Center(
-               child: Text("tap me"),
-             ),
-           ),
-         ),
-       ),
-      ),
+       // body: Center(
+       //   child: GestureDetector(
+       //     onTap:userTapped,
+       //         // (){// print("user tapped");},
+       //     child: Container(
+       //       width: 300,
+       //       height: 250,
+       //       color: Colors.deepPurple,
+       //       child: Center(
+       //         child: Text("tap me"),
+       //       ),
+       //     ),
+       //   ),
+       // ),
+      // ),
      );
   }
 }
